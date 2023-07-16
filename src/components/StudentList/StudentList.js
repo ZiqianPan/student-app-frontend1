@@ -1,4 +1,5 @@
 import StudentCard from "../StudentCard/StudentCard";
+import "./StudentList.css"
 
 export default function StudentList({ studentData }) {
   console.log("<StudentList> rendered!");
