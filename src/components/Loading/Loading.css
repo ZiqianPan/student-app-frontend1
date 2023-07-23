@@ -2,8 +2,4 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
-    width:60vw;
-    height: 80vh;
-    border-radius: 5px;
 }

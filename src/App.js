@@ -3,6 +3,7 @@ import "./App.css";
 import StudentList from "./components/StudentList/StudentList";
 import Loading from "./components/Loading/Loading";
 import Error from "./components/Error/Error";
+import Container from "./components/Container/Container";
 
 // TODO: Get this value from .env
 const API_URL = "http://localhost:8888";
@@ -16,6 +17,7 @@ function App() {
     console.log("<App /> useEffect() fired");
     async function fetchData() {
       try {
+        setError("");
         setLoading(true);
         const response = await fetch(`${API_URL}/students`);
         const json = await response.json();
@@ -48,7 +50,13 @@ function App() {
   };
 
   console.log(`<App /> rendered! num students = ${studentData.length}`);
-  return <div className="App">{renderContent()}</div>;
+  return (
+    <div className="App">
+      <Container center={Boolean(error || loading)}>
+        {renderContent()}
+      </Container>
+    </div>
+  );
 }
 
 export default App;

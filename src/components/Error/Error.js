@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import "./Error.css"
 
 export default function Error({ error }) {
     console.log(`<Error/> rendered! error=${error}`)
