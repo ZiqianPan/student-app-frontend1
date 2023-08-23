@@ -1,13 +1,17 @@
-import React from 'react'
-import "./Container.css"
+import "./Container.css";
 
-export default function Container({ center, children }) {
-    let classNames = ['Container'];
-    if (center) {
-        classNames.push("Container--center")
-    }
-    console.log(`<Container /> rendered!`)
-  return (
-    <div className={classNames.join(" ")}>{children}</div>
-  )
-}
+const Container = ({ center, children, scroll = true }) => {
+  let classNames = ["Container"];
+  if (center) {
+    classNames.push("Container--center");
+  }
+
+  if (scroll) {
+    classNames.push("Container--scroll");
+  }
+
+  console.log(`<Container /> rendered!`);
+  return <div className={classNames.join(" ")}>{children}</div>;
+};
+
+export default Container;
