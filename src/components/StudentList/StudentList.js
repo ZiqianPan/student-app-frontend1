@@ -43,8 +43,8 @@ const StudentList = ({ studentData }) => {
       // If the student's full name includes the searchInput, return true
       // otherwise false
       // (case insensitive)
-      const { firstName, lastName } = student;
-      const fullName = `${firstName} ${lastName}`.toLowerCase();
+      const { first_name, last_name } = student;
+      const fullName = `${first_name} ${last_name}`.toLowerCase();
 
       return fullName.includes(searchInput.toLowerCase());
     });
